@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { Button, Form, Row, Col } from 'react-bootstrap';
 import Divider from 'components/common/Divider';
 import SocialAuthButtons from './SocialAuthButtons';
+import auth from './auth.json';
 
 const RegistrationForm = ({ hasLabel }) => {
   // State
@@ -16,12 +17,15 @@ const RegistrationForm = ({ hasLabel }) => {
     isAccepted: false
   });
 
+  const navigate = useNavigate();
+
   // Handler
   const handleSubmit = e => {
     e.preventDefault();
     toast.success(`Successfully registered as ${formData.name}`, {
       theme: 'colored'
     });
+      navigate('/authentication/card/login');
   };
 
   const handleFieldChange = e => {
@@ -113,9 +117,7 @@ const RegistrationForm = ({ hasLabel }) => {
           Register
         </Button>
       </Form.Group>
-      <Divider>or register with</Divider>
-
-      <SocialAuthButtons />
+      
     </Form>
   );
 };

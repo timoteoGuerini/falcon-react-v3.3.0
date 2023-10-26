@@ -15,14 +15,22 @@ const LoginForm = ({ hasLabel, layout }) => {
   });
 
   const navigate = useNavigate();
-  console.log('AUTH: ', auth);
+  
   // Handler
   const handleSubmit = e => {
     e.preventDefault();
-    toast.success(`Logged in as ${formData.email}`, {
-      theme: 'colored'
-    });
-    navigate('/');
+    
+      if (auth.data[0].email === formData.email && auth.data[0].password === formData.password) {
+          toast.success(`Logged in as ${formData.email}`, {
+              theme: 'colored'
+          });
+          navigate('/');
+      }
+      else {
+          toast.error(`Wrong credentials`, {
+              theme: 'red'
+          });
+      }
   };
 
   const handleFieldChange = e => {
@@ -95,9 +103,9 @@ const LoginForm = ({ hasLabel, layout }) => {
         </Button>
       </Form.Group>
 
-      <Divider className="mt-4">or log in with</Divider>
+      
 
-      <SocialAuthButtons />
+      
     </Form>
   );
 };
