@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import RealTimeUsers from './real-time-users/RealTimeUsers';
 import Audience from './audience/Audience';
+import Powerbi from './powerbi/Powerbi';
 import ConnectCard from './ConnectCard';
 import SessionByBrowser from './session-by-browser/SessionByBrowser';
 import {
@@ -28,21 +29,10 @@ const Analytics = () => {
     <>
       <Row className="g-3 mb-3">
         <Col xxl={8}>
-          <Audience chartData={audienceChart} className="mb-3" />
+                  <Powerbi className="mb-3" />
           <ConnectCard />
         </Col>
-        <Col md={6} xxl={4}>
-          <RealTimeUsers data={realTimeUsers} />
-        </Col>
-        <Col md={6} xxl={4}>
-          <SessionByBrowser data={sessionByBrowser} />
-        </Col>
-        <Col md={6} xxl={4}>
-          <UsersByCountry chartData={sessionByCountry} mapData={countryData} />
-        </Col>
-        <Col md={6} xxl={4}>
-          <Intelligence data={intelligence} />
-        </Col>
+        
       </Row>
 
       <Row className="g-3 mb-3">
