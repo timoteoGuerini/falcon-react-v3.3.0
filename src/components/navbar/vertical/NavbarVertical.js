@@ -74,7 +74,7 @@ const NavbarVertical = () => {
     >
       <Flex alignItems="center">
         <ToggleButton />
-        <Logo at="navbar-vertical" width={40} />
+        <Logo at="navbar-vertical" width={90} />
       </Flex>
       <Navbar.Collapse
         in={showBurgerMenu}

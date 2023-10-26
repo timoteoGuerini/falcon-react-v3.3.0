@@ -15,7 +15,7 @@ import {
   managementEvents,
   discussionMembers
 } from 'data/dashboard/projectManagement';
-import { weather } from 'data/dashboard/default';
+import { weather } from 'data/dashboard/clientes';
 import Greetings from 'components/dashboards/project-management/Greetings';
 import Weather from 'components/dashboards/default/Weather';
 import SpaceWarning from 'components/dashboards/default/SpaceWarning';

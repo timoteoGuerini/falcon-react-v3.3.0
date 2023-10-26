@@ -4,7 +4,7 @@ import FalconCardHeader from 'components/common/FalconCardHeader';
 import CardDropdown from 'components/common/CardDropdown';
 import FalconLink from 'components/common/FalconLink';
 import PerfomanceTable from './PerfomanceTable';
-import { campaignTable, campaignChart } from 'data/dashboard/analytics';
+import { campaignTable, campaignChart } from 'data/dashboard/transacciones';
 import CampaignChart from './CampaignChart';
 import { getColor } from 'helpers/utils';
 

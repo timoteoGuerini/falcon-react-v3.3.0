@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import StatsChart from './StatsChart';
 import classNames from 'classnames';
-import { stats } from 'data/dashboard/analytics';
+import { stats } from 'data/dashboard/transacciones';
 
 const Stats = () => {
   return (

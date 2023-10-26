@@ -8,7 +8,7 @@ export const dashboardRoutes = {
       icon: 'chart-pie',
       children: [
         {
-          name: 'Default',
+          name: 'Clientes',
           to: '/',
           exact: true,
           active: true
@@ -19,25 +19,20 @@ export const dashboardRoutes = {
           active: true
         },
         {
-          name: 'CRM',
+          name: 'Deepracer',
           to: '/dashboard/crm',
           active: true
         },
         {
-          name: 'E Commerce',
+          name: 'Transacciones',
           to: '/dashboard/e-commerce',
           active: true
-        },
-        {
-          name: 'Management',
-          to: '/dashboard/project-management',
-          active: true
-        },
-        {
-          name: 'SaaS',
-          to: '/dashboard/saas',
-          active: true
         }
+        // {
+        //   name: 'Management',
+        //   to: '/dashboard/project-management',
+        //   active: true
+        // }
       ]
     }
   ]
@@ -1172,9 +1167,9 @@ export const documentationRoutes = {
 };
 
 export default [
-  dashboardRoutes,
-  appRoutes,
-  pagesRoutes,
-  modulesRoutes,
-  documentationRoutes
+  dashboardRoutes
+  // appRoutes,
+  // pagesRoutes,
+  // modulesRoutes,
+  // documentationRoutes
 ];

@@ -60,30 +60,8 @@ Project.propTypes = {
 const RunningProjects = ({ data }) => {
   return (
     <Card>
-      <FalconCardHeader
-        title="Running Projects"
-        light
-        titleTag="h6"
-        endEl={
-          <Form.Select size="sm" className="me-2">
-            <option>Working Time</option>
-            <option>Estimated Time</option>
-            <option>Billable Time</option>
-          </Form.Select>
-        }
-      />
-
-      <Card.Body className="py-0">
-        {data.map((project, index) => (
-          <Project
-            project={project}
-            isLast={index === data.length - 1}
-            key={project.id}
-          />
-        ))}
-      </Card.Body>
-
-      <FalconCardFooterLink title="Show all projects" size="sm" />
+      <FalconCardHeader title="Clientes" light titleTag="h6" />
+      <Card.Body className="py-0">{data}</Card.Body>
     </Card>
   );
 };

@@ -22,9 +22,7 @@ const LoginForm = ({ hasLabel, layout }) => {
     toast.success(`Logged in as ${formData.email}`, {
       theme: 'colored'
     });
-    if (auth.data[0] === formData) {
-      navigate('/');
-    }
+    navigate('/');
   };
 
   const handleFieldChange = e => {
