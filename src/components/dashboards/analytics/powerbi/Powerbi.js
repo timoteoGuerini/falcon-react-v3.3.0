@@ -38,7 +38,7 @@ function Powerbi({ url }) {
     <iframe
       title="Deliver.ar-Analitica"
       width="100%"
-      height="541"
+      height="900"
       src={url}
       frameborder="0"
       allowFullScreen="true"
