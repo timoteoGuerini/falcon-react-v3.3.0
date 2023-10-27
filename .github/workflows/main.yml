@@ -17,5 +17,4 @@ jobs:
         username: ${{ secrets.AWS_USER }}
         key: ${{ secrets.AWS_KEY }}
         port: ${{ secrets.AWS_PORT }}
-        script: | 
-          echo "PARA DEPLOYAR"
+        script: whoami
