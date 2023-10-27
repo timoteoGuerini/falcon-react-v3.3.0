@@ -22,7 +22,9 @@ const Analytics = () => {
         <Col lg={12}>
           <Card className="custom-card">
             <FalconCardHeader title="Analytics" light titleTag="h6" />
-            <Card.Body className="custom-card"></Card.Body>
+            <Card.Body className="custom-card">
+              <Powerbi />
+            </Card.Body>
           </Card>
         </Col>
       </Row>
