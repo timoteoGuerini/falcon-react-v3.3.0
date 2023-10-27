@@ -9,7 +9,14 @@ const Crm = () => {
         <Col lg={12}>
           <Card>
             <FalconCardHeader title="Deepracer" light titleTag="h6" />
-            <Card.Body className="py-0">{'//HTML FRAME'}</Card.Body>
+            <Card.Body className="py-0">
+              <iframe
+                width="100%"
+                height="800px"
+                title="Training Analysis"
+                src="https://timoteoguerini.github.io/trainingAnalysis/"
+              ></iframe>
+            </Card.Body>
           </Card>
         </Col>
       </Row>

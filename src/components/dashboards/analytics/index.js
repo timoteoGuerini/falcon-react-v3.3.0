@@ -13,7 +13,6 @@ import {
   topPagesTableData
 } from 'data/dashboard/transacciones';
 import FalconCardHeader from 'components/common/FalconCardHeader';
-import Powerbi from './powerbi/Powerbi';
 
 const Analytics = () => {
   return (
@@ -22,9 +21,7 @@ const Analytics = () => {
         <Col lg={12}>
           <Card className="custom-card">
             <FalconCardHeader title="Analytics" light titleTag="h6" />
-            <Card.Body className="custom-card">
-              <Powerbi />
-            </Card.Body>
+            <Card.Body className="custom-card"></Card.Body>
           </Card>
         </Col>
       </Row>
