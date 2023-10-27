@@ -255,7 +255,7 @@ const header = (
 )
 
     const reportComponent = (
-            <PowerBIEmbed
+            /*<PowerBIEmbed
                 embedConfig={sampleReportConfig}
                 eventHandlers={eventHandlersMap}
                 cssClassName={reportClass}
@@ -266,7 +266,8 @@ const header = (
                     setReport(embedObject)
                 }}
 
-            />
+            />*/
+        <iframe title="Deliver.ar-Analitica" width="100%" height="541" src="https://app.powerbi.com/reportEmbed?reportId=e6eccbab-3cd0-4e55-a33f-e9fbc149b53f&autoAuth=true&ctid=344979d0-d31d-4c57-8ba0-491aff4acaed" frameborder="0" allowFullScreen="true"></iframe>
 )
 
 const footer = (
@@ -311,15 +312,11 @@ const footer = (
 
 
     return (
-        <Card className="custom-card" >
-                    <Card.Header className="p-0 bg-light">
-                        {header}
-                    </Card.Header>
-                <Card.Body className="custom-card" >
+        <>
                     {isEmbedded ? null : controlButtons}
-                    {isEmbedded ? reportComponent : null}
-                </Card.Body>
-        </Card>
+            {isEmbedded ? reportComponent : null}
+                   </>
+        
     );
 
 
