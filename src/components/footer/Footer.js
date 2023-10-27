@@ -10,7 +10,7 @@ const Footer = () => (
           Analíticas <strong>Squad 8</strong>{' '}
           <span className="d-none d-sm-inline-block">| </span>
           <br className="d-sm-none" /> {new Date().getFullYear()} &copy;{' '}
-          <a href="https://themewagon.com">Themewagon</a>
+          <a href="#">SQUAD 8</a>
         </p>
       </Col>
       <Col sm="auto">
