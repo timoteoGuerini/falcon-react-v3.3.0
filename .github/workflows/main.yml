@@ -1,16 +1,16 @@
-name: Deploy to DigitalOcean
+name: Deploy to AWS
 
 on:
   push:
     branches:
-      - timo
+      - main
 
 jobs:
   run_example_job:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-    - name: Deploy DigitalOcean
+    - name: Deploy AWS FRONT
       uses: appleboy/ssh-action@v0.1.10
       with:
         host: ${{ secrets.AWS_HOST }}
