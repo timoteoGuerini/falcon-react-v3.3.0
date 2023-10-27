@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Row, Badge, Card, Form, ProgressBar } from 'react-bootstrap';
 import RealTimeUsers from './real-time-users/RealTimeUsers';
 import Audience from './audience/Audience';
+import Powerbi from './powerbi/Powerbi';
 import ConnectCard from './ConnectCard';
 import SessionByBrowser from './session-by-browser/SessionByBrowser';
 import {
