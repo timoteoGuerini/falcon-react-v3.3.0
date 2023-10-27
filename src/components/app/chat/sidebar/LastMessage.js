@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { users } from 'data/dashboard/default';
+import { users } from 'data/dashboard/clientes';
 
 const LastMessage = ({ lastMessage, thread }) => {
   const user = users.find(({ id }) => id === lastMessage?.senderUserId);

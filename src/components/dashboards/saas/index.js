@@ -13,7 +13,7 @@ import SaasRevenue from './SaasRevenue';
 import SaasConversion from './SaasConversion';
 import DepositeStatus from './DepositeStatus';
 import StatisticsCards from './stats-cards/StatisticsCards';
-import { users, files } from 'data/dashboard/default';
+import { users, files } from 'data/dashboard/clientes';
 import ActiveUsers from '../default/ActiveUsers';
 import SharedFiles from '../default/SharedFiles';
 import BandwidthSaved from '../default/BandwidthSaved';

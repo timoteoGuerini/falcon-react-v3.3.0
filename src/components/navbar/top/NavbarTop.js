@@ -42,18 +42,8 @@ const NavbarTop = () => {
   }, []);
 
   return (
-    <Navbar
-      className={classNames('navbar-glass  fs--1 navbar-top sticky-kit', {
-        // 'navbar-glass-shadow': showDropShadow
-        'navbar-glass-shadow': showDropShadow && !isChat
-      })}
-      expand={
-        navbarPosition === 'top' || navbarPosition === 'combo'
-          ? topNavbarBreakpoint
-          : true
-      }
-    >
-      <Navbar.Toggle
+    <Navbar>
+      {/* <Navbar.Toggle
         className={classNames('toggle-icon-wrapper me-md-3 me-2', {
           'd-lg-none': navbarPosition === 'top',
           [`d-${navbarBreakPoint}-none`]:
@@ -95,7 +85,7 @@ const NavbarTop = () => {
         </Nav>
       )}
 
-      <TopNavRightSideNavItem />
+      <TopNavRightSideNavItem /> */}
     </Navbar>
   );
 };

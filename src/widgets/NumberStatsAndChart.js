@@ -14,7 +14,7 @@ import {
   weeklySalesData,
   storageStatus,
   topProducts
-} from 'data/dashboard/default';
+} from 'data/dashboard/clientes';
 import {
   payment,
   activeUser,
@@ -28,7 +28,7 @@ import {
   realTimeUsers,
   sessionByBrowser,
   sessionByCountry
-} from 'data/dashboard/analytics';
+} from 'data/dashboard/transacciones';
 import {
   progressBar,
   projectsTable,

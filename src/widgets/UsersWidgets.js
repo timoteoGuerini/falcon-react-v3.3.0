@@ -19,7 +19,7 @@ import ActivityLog from 'components/pages/user/profile/ActivityLog';
 import activities from 'data/activities';
 import AddToFeed from 'components/app/social/feed/AddToFeed';
 import ActiveUsers from 'components/dashboards/default/ActiveUsers';
-import { users } from 'data/dashboard/default';
+import { users } from 'data/dashboard/clientes';
 
 const UsersWidgets = () => {
   return (
