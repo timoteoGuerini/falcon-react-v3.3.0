@@ -24,6 +24,16 @@ export const dashboardRoutes = {
           active: true
         },
         {
+          name: 'Visual Analysis',
+          to: '/dashboard/visualAnalysis',
+          active: true
+        },
+        {
+          name: 'Metrics',
+          to: '/dashboard/metrics',
+          active: true
+        },
+        {
           name: 'Users & Robots',
           to: '/dashboard/users-robots',
           active: true

@@ -182,6 +182,8 @@ import SplitLockScreen from 'components/authentication/split/LockScreen';
 import Wizard from 'components/wizard/Wizard';
 import Dashboard from 'components/dashboards/default';
 import AppContext from 'context/Context';
+import VisualAnalysis from 'components/dashboards/visualAnalysis';
+import Metrics from 'components/dashboards/metrics';
 
 const Layout = () => {
   const HTMLClassList = document.getElementsByTagName('html')[0].classList;
@@ -301,6 +303,8 @@ const Layout = () => {
           <Route path="/" element={<Dashboard />} />
           <Route path="dashboard/deliveries" element={<Analytics />} />
           <Route path="dashboard/deepracer" element={<Crm />} />
+          <Route path="dashboard/metrics" element={<Metrics />} />
+          <Route path="dashboard/visualAnalysis" element={<VisualAnalysis />} />
           <Route path="dashboard/saas" element={<Saas />} />
           <Route path="dashboard/users-robots" element={<Ecommerce />} />
           <Route
