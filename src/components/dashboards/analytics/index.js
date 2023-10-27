@@ -18,13 +18,13 @@ import Powerbi from './powerbi/Powerbi';
 const Analytics = () => {
   return (
     <>
-          <Row className="g-3 mb-3" >
+      <Row className="g-3 mb-3">
         <Col lg={12}>
-                  <Card className="custom-card">
+          <Card className="custom-card">
             <FalconCardHeader title="Analytics" light titleTag="h6" />
-                      <Card.Body className="custom-card">
-                          <Powerbi />
-                      </Card.Body>
+            <Card.Body className="custom-card">
+              <Powerbi />
+            </Card.Body>
           </Card>
         </Col>
       </Row>
