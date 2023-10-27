@@ -9,6 +9,7 @@ import SimpleBarReact from 'simplebar-react';
 import classNames from 'classnames';
 import { PowerBIEmbed } from 'powerbi-client-react';
 import { models, Report, Embed, service, Page } from 'powerbi-client';
+import 'assets/scss/theme/_power-bi-embed.scss'
 
 const TabTitle = ({ title, value, percentage, progress }) => (
   <div className="p-2 pe-4 text-start cursor-pointer">
@@ -33,7 +34,7 @@ const TabTitle = ({ title, value, percentage, progress }) => (
 
 function Powerbi() {
 
-    const sampleReportUrl = 'https://aka.ms/CaptureViewsReportEmbedConfig';
+    const sampleReportUrl = 'https://aka.ms/CaptureViewsReportEmbedConfig'; //'https://app.powerbi.com/reportEmbed?reportId=e6eccbab-3cd0-4e55-a33f-e9fbc149b53f&autoAuth=true&ctid=344979d0-d31d-4c57-8ba0-491aff4acaed'//
 
 const [report, setReport] = useState()
 
@@ -250,21 +251,23 @@ const controlButtons = isEmbedded ? (
 )
 
 const header = (
-    <div className="header">Power BI Embedded React Component Demo</div>
+    <div className="header">Power BI Embedded</div>
 )
 
-const reportComponent = (
-    <PowerBIEmbed
-        embedConfig={sampleReportConfig}
-        eventHandlers={eventHandlersMap}
-        cssClassName={reportClass}
-        getEmbeddedComponent={embedObject => {
-            console.log(
-                `Embedded object of type "${embedObject.embedtype}" received`
-            )
-            setReport(embedObject)
-        }}
-    />
+    const reportComponent = (
+            /*<PowerBIEmbed
+                embedConfig={sampleReportConfig}
+                eventHandlers={eventHandlersMap}
+                cssClassName={reportClass}
+                getEmbeddedComponent={embedObject => {
+                    console.log(
+                        `Embedded object of type "${embedObject.embedtype}" received`
+                    )
+                    setReport(embedObject)
+                }}
+
+            />*/
+        <iframe title="Deliver.ar-Analitica" width="100%" height="541" src="https://app.powerbi.com/reportEmbed?reportId=e6eccbab-3cd0-4e55-a33f-e9fbc149b53f&autoAuth=true&ctid=344979d0-d31d-4c57-8ba0-491aff4acaed" frameborder="0" allowFullScreen="true"></iframe>
 )
 
 const footer = (
@@ -309,25 +312,11 @@ const footer = (
 
 
     return (
-        <Card className={classNames('audience', 'overflow-hidden')}>
-            <Tab.Container id="audience-tab" defaultActiveKey="users">
-                <SimpleBarReact>
-                    <Card.Header className="p-0 bg-light">
-                        {header}
-                       
-                    </Card.Header>
-                </SimpleBarReact>
-                <Card.Body>
-                    {controlButtons}
-                    {isEmbedded ? reportComponent : null}
-                </Card.Body>
-            </Tab.Container>
-                <Card.Footer className="bg-light py-2">
-                    <Row className="g-0 flex-between-center">
-                        
-                    </Row>
-                </Card.Footer>
-        </Card>
+        <>
+                    {isEmbedded ? null : controlButtons}
+            {isEmbedded ? reportComponent : null}
+                   </>
+        
     );
 
 
