@@ -28,6 +28,7 @@ import RunningProjects from './RunningProjects';
 // import TopProducts from './TopProducts';
 // import Weather from './Weather';
 import FalconCardHeader from 'components/common/FalconCardHeader';
+import Powerbi from '../analytics/powerbi/Powerbi';
 
 const Dashboard = () => {
   const [frame, setFrame] = useState('');
@@ -38,11 +39,13 @@ const Dashboard = () => {
 
   return (
     <>
-      <Row className="g-3 mb-3">
+      <Row className="g-3 mb-3 mt-3">
         <Col lg={12}>
-          <Card>
-            <FalconCardHeader title="Clientes" light titleTag="h6" />
-            <Card.Body className="py-0">{'//HTML FRAME'}</Card.Body>
+          <Card className="custom-card mt-4">
+            <FalconCardHeader title="Purchases" light titleTag="h6" />
+            <Card.Body className="py-0">
+              <Powerbi url="https://app.powerbi.com/reportEmbed?reportId=e88d23c6-9817-40f2-9c5c-126af477241d&autoAuth=true&ctid=344979d0-d31d-4c57-8ba0-491aff4acaed" />
+            </Card.Body>
           </Card>
         </Col>
       </Row>

@@ -5,9 +5,9 @@ import FalconCardHeader from 'components/common/FalconCardHeader';
 const Crm = () => {
   return (
     <>
-      <Row className="g-3 mb-3">
+      <Row className="g-3 mb-3 mt-3">
         <Col lg={12}>
-          <Card>
+          <Card className="custom-card mt-4">
             <FalconCardHeader title="Deepracer" light titleTag="h6" />
             <Card.Body className="py-0">
               <iframe

@@ -299,10 +299,10 @@ const Layout = () => {
         <Route element={<MainLayout />}>
           {/*Dashboard*/}
           <Route path="/" element={<Dashboard />} />
-          <Route path="dashboard/analytics" element={<Analytics />} />
-          <Route path="dashboard/crm" element={<Crm />} />
+          <Route path="dashboard/deliveries" element={<Analytics />} />
+          <Route path="dashboard/deepracer" element={<Crm />} />
           <Route path="dashboard/saas" element={<Saas />} />
-          <Route path="dashboard/e-commerce" element={<Ecommerce />} />
+          <Route path="dashboard/users-robots" element={<Ecommerce />} />
           <Route
             path="dashboard/project-management"
             element={<ProjectManagement />}

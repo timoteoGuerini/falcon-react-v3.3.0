@@ -8,24 +8,24 @@ export const dashboardRoutes = {
       icon: 'chart-pie',
       children: [
         {
-          name: 'Clientes',
+          name: 'Purchases',
           to: '/',
           exact: true,
           active: true
         },
         {
-          name: 'Analytics',
-          to: '/dashboard/analytics',
+          name: 'Deliveries',
+          to: '/dashboard/deliveries',
           active: true
         },
         {
           name: 'Deepracer',
-          to: '/dashboard/crm',
+          to: '/dashboard/deepracer',
           active: true
         },
         {
-          name: 'Transacciones',
-          to: '/dashboard/e-commerce',
+          name: 'Users & Robots',
+          to: '/dashboard/users-robots',
           active: true
         }
         // {

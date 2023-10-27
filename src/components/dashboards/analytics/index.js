@@ -18,12 +18,12 @@ import FalconCardHeader from 'components/common/FalconCardHeader';
 const Analytics = () => {
   return (
     <>
-      <Row className="g-3 mb-3">
+      <Row className="g-3 mb-3 mt-3">
         <Col lg={12}>
-          <Card className="custom-card">
-            <FalconCardHeader title="Analytics" light titleTag="h6" />
+          <Card className="custom-card mt-4">
+            <FalconCardHeader title="Deliveries" light titleTag="h6" />
             <Card.Body className="custom-card">
-              <Powerbi />
+              <Powerbi url="https://app.powerbi.com/reportEmbed?reportId=c0d2c740-0cf7-4811-9190-3d23ddf73c07&autoAuth=true&ctid=344979d0-d31d-4c57-8ba0-491aff4acaed" />
             </Card.Body>
           </Card>
         </Col>
