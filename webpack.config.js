@@ -37,13 +37,13 @@ module.exports = {
               sourceMap: true
             }
           },
-          // {
-          //   loader: "css-loader",
-          //   options: {
-          //     url: false,
-          //   },
-          // },
-          // "sass-loader",
+          {
+            loader: 'css-loader',
+            options: {
+              url: false
+            }
+          },
+          'sass-loader',
           {
             loader: 'css-loader',
             options: {
@@ -56,6 +56,10 @@ module.exports = {
             options: {
               sourceMap: true
             }
+          },
+          {
+            test: /\.html$/,
+            use: 'html-loader'
           }
         ]
       }

@@ -10,7 +10,7 @@ const PurchaseCard = () => {
     show && (
       <div className="settings my-3">
         <Card className="p-0 rounded-2 position-relative">
-          <div
+          {/* <div
             className="position-absolute"
             style={{ right: '3px', top: '3px' }}
           >
@@ -38,7 +38,7 @@ const PurchaseCard = () => {
                 Purchase
               </Button>
             </div>
-          </Card.Body>
+          </Card.Body> */}
         </Card>
       </div>
     )

@@ -13,15 +13,32 @@ import {
   topPagesTableData
 } from 'data/dashboard/transacciones';
 import FalconCardHeader from 'components/common/FalconCardHeader';
+import { useState } from 'react';
+import trainingAnalysis from './trainingAnalysis.html';
 
 const Analytics = () => {
+  const [htmlContent, setHtmlContent] = useState('');
+
+  useEffect(() => {
+    fetch(trainingAnalysis)
+      .then(response => response.text())
+      .then(data => setHtmlContent(data));
+  }, []);
+
   return (
     <>
       <Row className="g-3 mb-3">
         <Col lg={12}>
           <Card>
             <FalconCardHeader title="Analytics" light titleTag="h6" />
-            <Card.Body className="py-0">{'//HTML FRAME'}</Card.Body>
+            <Card.Body className="py-0">
+              {/* <button onClick={handleFileUpload} className="btn btn-primary">
+                Cargar archivo
+              </button>
+              {showImportedHTML && (
+                <div dangerouslySetInnerHTML={{ __html: importedHTML }} />
+              )} */}
+            </Card.Body>
           </Card>
         </Col>
       </Row>

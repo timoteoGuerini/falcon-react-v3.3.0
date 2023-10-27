@@ -11,7 +11,7 @@ const SettingsToggle = () => {
 
   return (
     <Card className="setting-toggle" onClick={handleClick}>
-      <Card.Body className="d-flex align-items-center py-md-2 px-2 py-1">
+      {/* <Card.Body className="d-flex align-items-center py-md-2 px-2 py-1">
         <div
           className="bg-soft-primary position-relative rounded-start"
           style={{ height: '34px', width: '28px' }}
@@ -40,7 +40,7 @@ const SettingsToggle = () => {
         <small className="text-uppercase text-primary fw-bold bg-soft-primary py-2 pe-2 ps-1 rounded-end">
           customize
         </small>
-      </Card.Body>
+      </Card.Body> */}
     </Card>
   );
 };
