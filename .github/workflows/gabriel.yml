@@ -1,4 +1,4 @@
-name: Upload Frontend - Branch: gabriel
+name: Upload Frontend - Branch gabriel
 
 on:
   push:
