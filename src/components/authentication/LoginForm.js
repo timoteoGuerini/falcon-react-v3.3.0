@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -6,20 +6,26 @@ import { Button, Form, Row, Col } from 'react-bootstrap';
 import Divider from 'components/common/Divider';
 import SocialAuthButtons from './SocialAuthButtons';
 import auth from './auth.json';
+import axios from 'axios';
+import AuthWizardContext from 'context/Context'
 
 const LoginForm = ({ hasLabel, layout }) => {
-  // State
-  const [formData, setFormData] = useState({
-    email: '',
-    password: ''
-  });
+    // State
+    const [formData, setFormData] = useState({
+        email: '',
+        password: ''
+    });
 
-  const navigate = useNavigate();
+    const navigate = useNavigate();
+
+    const {user} = useContext(AuthWizardContext);
   
   // Handler
-  const handleSubmit = e => {
+  /*const handleSubmit = e => {
     e.preventDefault();
-    
+
+
+
       if (auth.data[0].email === formData.email && auth.data[0].password === formData.password) {
           toast.success(`Logged in as ${formData.email}`, {
               theme: 'colored'
@@ -31,7 +37,31 @@ const LoginForm = ({ hasLabel, layout }) => {
               theme: 'red'
           });
       }
-  };
+    };*/
+
+    const handleSubmit = async () => {
+        try {
+            const response = await axios.get(`http://abmpersonalinternoapi.deliver.ar/api/LoginUid?uid=${formData.email}&pass=${formData.password}`);
+            // Manejar la respuesta según la lógica de tu aplicación
+            console.log(response.data);
+            if (response.status == "ok") {
+                toast.success(`Logged in as ${formData.email}`, {
+                    theme: 'colored'
+                });
+                user = formData.email;
+                navigate('/');
+            }
+            else {
+                toast.error(`Wrong credentials`, {
+                    theme: 'red'
+                });
+            }
+
+        } catch (error) {
+            // Manejar errores
+            console.error('Error al iniciar sesión:', error);
+        }
+    };
 
   const handleFieldChange = e => {
     setFormData({
@@ -63,35 +93,7 @@ const LoginForm = ({ hasLabel, layout }) => {
           type="password"
         />
       </Form.Group>
-
-      <Row className="justify-content-between align-items-center">
-        <Col xs="auto">
-          <Form.Check type="checkbox" id="rememberMe">
-            <Form.Check.Input
-              type="checkbox"
-              name="remember"
-              checked={formData.remember}
-              onChange={e =>
-                setFormData({
-                  ...formData,
-                  remember: e.target.checked
-                })
-              }
-            />
-            <Form.Check.Label className="mb-0">Remember Me</Form.Check.Label>
-          </Form.Check>
-        </Col>
-
-        <Col xs="auto">
-          <Link
-            className="fs--1 mb-0"
-            to={`/authentication/${layout}/forgot-password`}
-          >
-            Forget Password?
-          </Link>
-        </Col>
-      </Row>
-
+      
       <Form.Group>
         <Button
           type="submit"
