@@ -73,8 +73,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
-    "build": "SKIP_PREFLIGHT_CHECK=true react-scripts --openssl-legacy-provider build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build:css": "webpack --config webpack.config.js",
@@ -103,7 +103,6 @@
     "prettier": "^2.3.2",
     "sass": "^1.38.0",
     "sass-loader": "^10.1.1",
-    "webpack": "^4.44.2",
     "webpack-cli": "^4.6.0",
     "webpack-fix-style-only-entries": "^0.6.1",
     "webpack-rtl-plugin": "^2.0.0"
