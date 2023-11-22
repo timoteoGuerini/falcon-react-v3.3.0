@@ -14,7 +14,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
+      - name: Set up Node.js 17.0.0
         uses: actions/setup-node@v2
         with:
           node-version: '17.0.0'
@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Set up Node.js
+      - name: Set up Node.js 16.19.1
         uses: actions/setup-node@v2
         with:
           node-version: '16.19.1'
