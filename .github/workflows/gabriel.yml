@@ -1,8 +1,7 @@
-name: Upload Website
+name: Upload Frontend - Branch: gabriel
 
 on:
   push:
-    #branches: [ "main" ]
     branches: [ "gabriel" ]
   pull_request:
     branches: [ "gabriel" ]
