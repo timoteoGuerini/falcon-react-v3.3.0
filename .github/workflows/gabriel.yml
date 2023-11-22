@@ -22,6 +22,11 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.19.1'
+          
       - name: Build app
         run: npm run build
 
