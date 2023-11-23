@@ -1,10 +1,10 @@
-name: Upload Frontend - Branch gabriel
+name: Upload Frontend - Branch main
 
 on:
   push:
-    branches: [ "gabriel" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "gabriel" ]
+    branches: [ "main" ]
 
 jobs:
   build:
