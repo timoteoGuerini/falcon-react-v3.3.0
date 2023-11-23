@@ -7,9 +7,7 @@ const Login = () => (
   <>
     <Flex justifyContent="between" alignItems="center" className="mb-2">
       <h5>Log in</h5>
-      <p className="fs--1 text-600 mb-0">
-       
-      </p>
+      <p className="fs--1 text-600 mb-0"></p>
     </Flex>
     <LoginForm />
   </>

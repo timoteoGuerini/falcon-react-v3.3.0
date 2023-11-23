@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-    - name: Deploy AWS FRONT
-      uses: appleboy/ssh-action@v0.1.10
-      with:
-        host: ${{ secrets.AWS_HOST }}
-        username: ${{ secrets.AWS_USER }}
-        key: ${{ secrets.AWS_KEY }}
-        port: ${{ secrets.AWS_PORT }}
-        script: whoami
+      - name: Deploy AWS FRONT
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.AWS_HOST }}
+          username: ${{ secrets.AWS_USER }}
+          key: ${{ secrets.AWS_KEY }}
+          port: ${{ secrets.AWS_PORT }}
+          script: whoami

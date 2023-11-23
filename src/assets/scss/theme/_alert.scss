@@ -21,7 +21,6 @@
   font-weight: $alert-link-font-weight;
 }
 
-
 // Dismissible alerts
 //
 // Expand the right padding and account for the close button's positioning.
@@ -39,7 +38,6 @@
   }
 }
 
-
 // scss-docs-start alert-modifiers
 // Generate contextual modifier classes for colorizing the alert.
 
@@ -53,6 +51,5 @@
   .alert-#{$state} {
     @include alert-variant($background, $border, $state);
   }
-  
 }
 // scss-docs-end alert-modifiers

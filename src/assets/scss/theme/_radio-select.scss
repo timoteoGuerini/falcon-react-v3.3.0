@@ -1,6 +1,6 @@
 // Used in E-commerce checkout page
 
-.radio-select .form-check-label{
+.radio-select .form-check-label {
   cursor: pointer;
 }
 .radio-select-content {
@@ -14,14 +14,19 @@
   font-size: map_get($font-sizes, -1);
   margin-top: map_get($spacers, 2);
 }
-.radio-select-link { color: inherit; }
-.radio-select .form-check-input:checked + .form-check-label .radio-select-content {
+.radio-select-link {
+  color: inherit;
+}
+.radio-select
+  .form-check-input:checked
+  + .form-check-label
+  .radio-select-content {
   border: 1px solid var(--#{$variable-prefix}success);
   color: var(--#{$variable-prefix}dark);
 }
 
-
-.form-check-input, .form-select{
+.form-check-input,
+.form-select {
   appearance: none;
   -webkit-appearance: none;
 }

@@ -7,8 +7,8 @@ import AudienceChart from './AudienceChart';
 import FalconLink from 'components/common/FalconLink';
 import SimpleBarReact from 'simplebar-react';
 import classNames from 'classnames';
-// { PowerBIEmbed } from 'powerbi-client-react';
-//import { models, Report, Embed, service, Page } from 'powerbi-client';
+import { PowerBIEmbed } from 'powerbi-client-react';
+import { models, Report, Embed, service, Page } from 'powerbi-client';
 import 'assets/scss/theme/_power-bi-embed.scss';
 
 const TabTitle = ({ title, value, percentage, progress }) => (
@@ -32,9 +32,7 @@ const TabTitle = ({ title, value, percentage, progress }) => (
 );
 
 function Powerbi({ url }) {
-  
   const reportComponent = (
-
     <iframe
       title="Deliver.ar-Analitica"
       width="100%"
@@ -45,13 +43,7 @@ function Powerbi({ url }) {
     ></iframe>
   );
 
-  
-
-  return (
-    <>
-      {reportComponent}
-    </>
-  );
+  return <>{reportComponent}</>;
 
   TabTitle.propTypes = {
     title: PropTypes.string.isRequired,
@@ -60,15 +52,15 @@ function Powerbi({ url }) {
     progress: PropTypes.bool
   };
 
-  Audience.propTypes = {
-    chartData: PropTypes.shape({
-      users: PropTypes.arrayOf(PropTypes.array),
-      sessions: PropTypes.arrayOf(PropTypes.array),
-      rate: PropTypes.arrayOf(PropTypes.array),
-      duration: PropTypes.arrayOf(PropTypes.array)
-    }).isRequired,
-    className: PropTypes.string.isRequired
-  };
+  // Audience.propTypes = {
+  //   chartData: PropTypes.shape({
+  //     users: PropTypes.arrayOf(PropTypes.array),
+  //     sessions: PropTypes.arrayOf(PropTypes.array),
+  //     rate: PropTypes.arrayOf(PropTypes.array),
+  //     duration: PropTypes.arrayOf(PropTypes.array)
+  //   }).isRequired,
+  //   className: PropTypes.string.isRequired
+  // };
 }
 
 export default Powerbi;

@@ -1,9 +1,9 @@
 @each $color, $value in $theme-colors {
-  .link-#{$color}{
+  .link-#{$color} {
     color: var(--#{$variable-prefix}#{$color});
     &:hover,
-    &:focus{
-      color: var(--#{$variable-prefix}colored-link-#{$color}-hover-color)
+    &:focus {
+      color: var(--#{$variable-prefix}colored-link-#{$color}-hover-color);
     }
   }
 }
@@ -13,7 +13,9 @@
     color: var(--#{$variable-prefix}#{$color}) !important;
     &:hover,
     &:focus {
-      color: var(--#{$variable-prefix}colored-link-#{$color}-hover-color) !important;
+      color: var(
+        --#{$variable-prefix}colored-link-#{$color}-hover-color
+      ) !important;
     }
   }
 }

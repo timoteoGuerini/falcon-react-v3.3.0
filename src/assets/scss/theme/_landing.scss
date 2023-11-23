@@ -1,7 +1,8 @@
 /*-----------------------------------------------
 |   Landing banner style
 -----------------------------------------------*/
-.img-landing-banner, .img-showcase-banner{
+.img-landing-banner,
+.img-showcase-banner {
   border-top-left-radius: $border-radius-lg;
   border-top-right-radius: $border-radius-lg;
   overflow: hidden;
@@ -11,14 +12,18 @@
   position: relative;
   box-shadow: $box-shadow-lg;
   display: block;
-  @include media-breakpoint-only(xl){ margin-bottom: -18rem; }
-  @include media-breakpoint-only(lg){ margin-bottom: -20rem; }
+  @include media-breakpoint-only(xl) {
+    margin-bottom: -18rem;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-bottom: -20rem;
+  }
   &.img-showcase-banner {
     &:after {
       display: none;
     }
   }
-  &:after{
+  &:after {
     content: '';
     position: absolute;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
@@ -28,15 +33,16 @@
     height: 70%;
     transition: opacity 0.6s;
   }
-  @include hover-focus{
+  @include hover-focus {
     transform: translateY(-5rem);
-    &:after{ opacity: 0; }
+    &:after {
+      opacity: 0;
+    }
   }
 }
 
-
-@include media-breakpoint-down(sm){
-  .landing-cta-img{
+@include media-breakpoint-down(sm) {
+  .landing-cta-img {
     width: 100%;
     height: auto;
   }
@@ -45,7 +51,7 @@
 /*-----------------------------------------------
 |  Back to top button   
 -----------------------------------------------*/
-.btn-back-to-top{
+.btn-back-to-top {
   background-color: $dark;
   display: flex;
   align-items: center;
@@ -54,7 +60,7 @@
   left: 50%;
   top: -7.5rem;
   transform: translate3d(-50%, -50%, 0) rotate(-45deg);
-  [dir="rtl"] & {
+  [dir='rtl'] & {
     transform: translate3d(-50%, -50%, 0) rotate(45deg);
   }
   height: 2.5rem;
@@ -64,9 +70,9 @@
 /*-----------------------------------------------
 |   Special Card
 -----------------------------------------------*/
-.card-span{
+.card-span {
   transition: all 0.4s ease;
-  .card-span-img{
+  .card-span-img {
     position: absolute;
     left: 50%;
     transform: translate3d(-50%, -50%, 0);
@@ -79,7 +85,7 @@
     justify-content: center;
     align-items: center;
   }
-  @include hover-focus{
+  @include hover-focus {
     // transform: translateY(-0.2rem);
     box-shadow: var(--#{$variable-prefix}card-span-img-hover-box-shadow);
   }

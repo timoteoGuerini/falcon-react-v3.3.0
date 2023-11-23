@@ -25,7 +25,7 @@ const RegistrationForm = ({ hasLabel }) => {
     toast.success(`Successfully registered as ${formData.name}`, {
       theme: 'colored'
     });
-      navigate('/authentication/card/login');
+    navigate('/authentication/card/login');
   };
 
   const handleFieldChange = e => {
@@ -117,7 +117,6 @@ const RegistrationForm = ({ hasLabel }) => {
           Register
         </Button>
       </Form.Group>
-      
     </Form>
   );
 };

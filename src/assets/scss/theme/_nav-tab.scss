@@ -21,9 +21,9 @@
     }
   }
 
-  .nav-item{
-    .nav-link{
-      font-family:$font-family-base;
+  .nav-item {
+    .nav-link {
+      font-family: $font-family-base;
     }
   }
 
@@ -32,7 +32,6 @@
     color: var(--#{$variable-prefix}primary);
     background-color: transparent;
     border-bottom: 2px solid var(--#{$variable-prefix}primary);
-
   }
 }
 
@@ -50,7 +49,9 @@
     color: var(--#{$variable-prefix}600);
 
     &.active {
-      background-color: var(--#{$variable-prefix}nav-pills-falcon-active-bg-color) !important;
+      background-color: var(
+        --#{$variable-prefix}nav-pills-falcon-active-bg-color
+      ) !important;
       box-shadow: var(--#{$variable-prefix}btn-falcon-box-shadow) !important;
       color: var(--#{$variable-prefix}btn-falcon-default-color);
     }

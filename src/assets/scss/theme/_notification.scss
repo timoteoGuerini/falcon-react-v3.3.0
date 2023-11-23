@@ -1,7 +1,7 @@
 /*-----------------------------------------------
 |   Notification
 -----------------------------------------------*/
-.notification{
+.notification {
   color: var(--#{$variable-prefix}1000);
   text-decoration: none;
   background-color: var(--#{$variable-prefix}notification-bg);
@@ -9,32 +9,36 @@
   font-size: map_get($font-sizes, '-1');
   font-family: $font-family-base;
   transition: $transition-base;
-  &:not(.notification-flush){
+  &:not(.notification-flush) {
     border: 1px solid var(--#{$variable-prefix}border-color);
     box-shadow: $box-shadow-sm;
     border-radius: $border-radius-lg;
     padding: map_get($spacers, 3);
   }
-  @include hover-focus{
+  @include hover-focus {
     color: var(--#{$variable-prefix}dark);
     text-decoration: none;
   }
 }
-.notification-body{ margin-bottom: map_get($spacers, 1); }
-.notification-time{
+.notification-body {
+  margin-bottom: map_get($spacers, 1);
+}
+.notification-time {
   margin-bottom: 0;
   color: var(--#{$variable-prefix}600);
   font-size: map_get($font-sizes, '-1');
 }
-.notification-unread{
+.notification-unread {
   background-color: var(--#{$variable-prefix}notification-unread-bg) !important;
-  @include hover-focus{
-    background-color: var(--#{$variable-prefix}notification-unread-hover-bg) !important;
+  @include hover-focus {
+    background-color: var(
+      --#{$variable-prefix}notification-unread-hover-bg
+    ) !important;
   }
 }
-.notification-indicator{
+.notification-indicator {
   position: relative;
-  &::before{
+  &::before {
     position: absolute;
     content: '';
     right: 0.125rem;
@@ -42,9 +46,10 @@
     height: 1rem;
     width: 1rem;
     border-radius: 50%;
-    border: 2px solid var(--#{$variable-prefix}notification-indicator-border-color);
+    border: 2px solid
+      var(--#{$variable-prefix}notification-indicator-border-color);
   }
-  &-number{
+  &-number {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,13 +62,17 @@
     color: #fff;
     font-weight: $font-weight-bold;
   }
-  &{
+  & {
     @each $state, $value in $theme-colors {
-      &-#{$state}::before { background-color: var(--#{$variable-prefix}#{$state}); }
+      &-#{$state}::before {
+        background-color: var(--#{$variable-prefix}#{$state});
+      }
     }
   }
   & {
-    &-fill::before { border : 0; }
+    &-fill::before {
+      border: 0;
+    }
   }
 }
 
@@ -87,7 +96,7 @@
     .list-group-title {
       background-color: var(--#{$variable-prefix}notification-title-bg);
       font-weight: $font-weight-semi-bold;
-      font-size: map_get($font-sizes, "-2");
+      font-size: map_get($font-sizes, '-2');
       color: var(--#{$variable-prefix}600);
       padding: map_get($spacers, 1) $card-spacer-x;
     }
@@ -97,4 +106,3 @@
     min-width: 20rem;
   }
 }
-

@@ -7,19 +7,19 @@ import Divider from 'components/common/Divider';
 import SocialAuthButtons from './SocialAuthButtons';
 import auth from './auth.json';
 import axios from 'axios';
-import AuthWizardContext from 'context/Context'
+import AuthWizardContext from 'context/Context';
 
 const LoginForm = ({ hasLabel, layout }) => {
-    // State
-    const [formData, setFormData] = useState({
-        email: '',
-        password: ''
-    });
+  // State
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  });
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const {user} = useContext(AuthWizardContext);
-  
+  const { user } = useContext(AuthWizardContext);
+
   // Handler
   /*const handleSubmit = e => {
     e.preventDefault();
@@ -39,29 +39,29 @@ const LoginForm = ({ hasLabel, layout }) => {
       }
     };*/
 
-    const handleSubmit = async () => {
-        try {
-            const response = await axios.get(`http://abmpersonalinternoapi.deliver.ar/api/LoginUid?uid=${formData.email}&pass=${formData.password}`);
-            // Manejar la respuesta según la lógica de tu aplicación
-            console.log(response.data);
-            if (response.status == "ok") {
-                toast.success(`Logged in as ${formData.email}`, {
-                    theme: 'colored'
-                });
-                user = formData.email;
-                navigate('/');
-            }
-            else {
-                toast.error(`Wrong credentials`, {
-                    theme: 'red'
-                });
-            }
-
-        } catch (error) {
-            // Manejar errores
-            console.error('Error al iniciar sesión:', error);
-        }
-    };
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.get(
+        `http://abmpersonalinternoapi.deliver.ar/api/LoginUid?uid=${formData.email}&pass=${formData.password}`
+      );
+      // Manejar la respuesta segï¿½n la lï¿½gica de tu aplicaciï¿½n
+      console.log(response.data);
+      if (response.status == 'ok') {
+        toast.success(`Logged in as ${formData.email}`, {
+          theme: 'colored'
+        });
+        user = formData.email;
+        navigate('/');
+      } else {
+        toast.error(`Wrong credentials`, {
+          theme: 'red'
+        });
+      }
+    } catch (error) {
+      // Manejar errores
+      console.error('Error al iniciar sesiï¿½n:', error);
+    }
+  };
 
   const handleFieldChange = e => {
     setFormData({
@@ -93,7 +93,7 @@ const LoginForm = ({ hasLabel, layout }) => {
           type="password"
         />
       </Form.Group>
-      
+
       <Form.Group>
         <Button
           type="submit"
@@ -104,10 +104,6 @@ const LoginForm = ({ hasLabel, layout }) => {
           Log in
         </Button>
       </Form.Group>
-
-      
-
-      
     </Form>
   );
 };

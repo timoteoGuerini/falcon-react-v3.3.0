@@ -22,7 +22,7 @@
 
   &.overlay:before {
     position: absolute;
-    content: "";
+    content: '';
     background: rgba(#000, 0.25);
     top: 0;
     bottom: 0;
@@ -38,7 +38,6 @@
   &.overlay-2:before {
     background: rgba(#000, 0.4);
   }
-  
 
   .bg-video {
     position: absolute;
@@ -74,7 +73,7 @@
   border-top-right-radius: 0.375rem;
   border-bottom-right-radius: 0.375rem;
 
-  [dir="rtl"] & {
+  [dir='rtl'] & {
     background-position: left;
     transform: scaleX(-1);
     border-top-left-radius: 0.375rem;
@@ -127,15 +126,19 @@
   &:after,
   &:before {
     position: absolute;
-    content: "";
+    content: '';
     border-radius: 50%;
   }
 }
 
 .bg-shape {
   @include shape(var(--#{$variable-prefix}bg-shape-bg));
-  &:after { background-image: var(--#{$variable-prefix}bg-shape-bg-ltd); }
-  &:before { background-image: var(--#{$variable-prefix}bg-shape-bg-dtl); }
+  &:after {
+    background-image: var(--#{$variable-prefix}bg-shape-bg-ltd);
+  }
+  &:before {
+    background-image: var(--#{$variable-prefix}bg-shape-bg-dtl);
+  }
 }
 
 .bg-circle-shape {
@@ -167,7 +170,11 @@
   }
 }
 .showcase-page-gradient {
-  background: linear-gradient(357.7deg, #024787 -88.88%, rgba(0, 79, 197, 0) 27.93%) 
+  background: linear-gradient(
+    357.7deg,
+    #024787 -88.88%,
+    rgba(0, 79, 197, 0) 27.93%
+  );
 }
 
 .bg-transparent-50 {
