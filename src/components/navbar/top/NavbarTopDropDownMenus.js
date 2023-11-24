@@ -13,9 +13,11 @@ import { flatRoutes } from 'helpers/utils';
 import NavbarDropdownApp from './NavbarDropdownApp';
 import NavbarDropdownPages from './NavbarDropdownPages';
 import NavbarDropdownModules from './NavbarDropdownModules';
-import AppContext from 'context/Context';
+import AppContext, { AuthWizardContext } from 'context/Context';
 
 const NavbarTopDropDownMenus = () => {
+  const { user } = useContext(AuthWizardContext);
+
   const {
     config: { navbarCollapsed, showBurgerMenu },
     setConfig
@@ -31,21 +33,23 @@ const NavbarTopDropDownMenus = () => {
   };
   return (
     <>
-      <NavbarDropdown title="dashboard">
-        {dashboardRoutes.children[0].children.map(route => (
-          <Dropdown.Item
-            key={route.name}
-            as={Link}
-            className={route.active ? 'link-600' : 'text-500'}
-            to={route.to}
-            onClick={handleDropdownItemClick}
-          >
-            {route.name}
-          </Dropdown.Item>
-        ))}
-      </NavbarDropdown>
+      {user ? (
+        <NavbarDropdown title="dashboard">
+          {dashboardRoutes.children[0].children.map(route => (
+            <Dropdown.Item
+              key={route.name}
+              as={Link}
+              className={route.active ? 'link-600' : 'text-500'}
+              to={route.to}
+              onClick={handleDropdownItemClick}
+            >
+              {route.name}
+            </Dropdown.Item>
+          ))}
+        </NavbarDropdown>
+      ) : undefined}
 
-      <NavbarDropdown title="app">
+      {/* <NavbarDropdown title="app">
         <NavbarDropdownApp items={appRoutes.children} />
       </NavbarDropdown>
 
@@ -69,7 +73,7 @@ const NavbarTopDropDownMenus = () => {
             {route.name}
           </Dropdown.Item>
         ))}
-      </NavbarDropdown>
+      </NavbarDropdown> */}
     </>
   );
 };

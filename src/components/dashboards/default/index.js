@@ -44,7 +44,7 @@ const Dashboard = () => {
           <Card className="custom-card mt-4">
             <FalconCardHeader title="Purchases" light titleTag="h6" />
             <Card.Body className="py-0">
-              <Powerbi url="https://app.powerbi.com/reportEmbed?reportId=e88d23c6-9817-40f2-9c5c-126af477241d&autoAuth=true&ctid=344979d0-d31d-4c57-8ba0-491aff4acaed" />
+              <Powerbi url="https://app.powerbi.com/reportEmbed?reportId=85f3168c-585c-4dff-8e21-30940c397e07&autoAuth=true&ctid=344979d0-d31d-4c57-8ba0-491aff4acaed" />
             </Card.Body>
           </Card>
         </Col>

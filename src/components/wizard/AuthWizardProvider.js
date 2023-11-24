@@ -2,13 +2,11 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { AuthWizardContext } from 'context/Context';
 
-const AuthWizardProvider = ({ children }) => {
-  const [user, setUser] = useState({});
-  const [step, setStep] = useState(1);
 
-  const value = { user, setUser, step, setStep };
+const AuthWizardProvider = ({ children }) => {
+  const [user, setUser] = useState({email:'manny@manny.com', password:'Manny2023*'});
   return (
-    <AuthWizardContext.Provider value={value}>
+    <AuthWizardContext.Provider value={{user, setUser}}>
       {children}
     </AuthWizardContext.Provider>
   );

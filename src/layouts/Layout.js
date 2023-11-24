@@ -184,6 +184,7 @@ import Dashboard from 'components/dashboards/default';
 import AppContext from 'context/Context';
 import VisualAnalysis from 'components/dashboards/visualAnalysis';
 import Metrics from 'components/dashboards/metrics';
+import Login from 'components/authentication/simple/Login';
 
 const Layout = () => {
   const HTMLClassList = document.getElementsByTagName('html')[0].classList;
@@ -297,15 +298,15 @@ const Layout = () => {
         </Route>
 
         {/* //--- MainLayout Starts  */}
-
+        <Route path="/" element={<Login />} />
         <Route element={<MainLayout />}>
           {/*Dashboard*/}
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="dashboard/deliveries" element={<Analytics />} />
           <Route path="dashboard/deepracer" element={<Crm />} />
           <Route path="dashboard/metrics" element={<Metrics />} />
           <Route path="dashboard/visualAnalysis" element={<VisualAnalysis />} />
-          <Route path="dashboard/saas" element={<Saas />} />
+          {/* <Route path="dashboard/saas" element={<Saas />} /> */}
           <Route path="dashboard/users-robots" element={<Ecommerce />} />
           <Route
             path="dashboard/project-management"

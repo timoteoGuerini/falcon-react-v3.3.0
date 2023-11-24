@@ -9,7 +9,7 @@ export const dashboardRoutes = {
       children: [
         {
           name: 'Purchases',
-          to: '/',
+          to: '/dashboard',
           exact: true,
           active: true
         },
@@ -1177,8 +1177,8 @@ export const documentationRoutes = {
 };
 
 export default [
-  dashboardRoutes
-  // appRoutes,
+  dashboardRoutes,
+  // appRoutes
   // pagesRoutes,
   // modulesRoutes,
   // documentationRoutes
