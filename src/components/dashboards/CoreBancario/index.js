@@ -4,6 +4,7 @@ import Powerbi from './powerbi/Powerbi';
 import FalconCardHeader from 'components/common/FalconCardHeader';
 
 const CoreBancario = () => {
+  
   return (
     <>
       <Row className="g-3 mb-3 mt-3">

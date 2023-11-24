@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Nav, Navbar, Row, Col } from 'react-bootstrap';
 import { navbarBreakPoint, topNavbarBreakpoint } from 'config';
+import { useNavigate } from 'react-router-dom';
+
 import AppContext from 'context/Context';
 import Flex from 'components/common/Flex';
 import Logo from 'components/common/Logo';
@@ -13,8 +15,41 @@ import { capitalize } from 'helpers/utils';
 import NavbarTopDropDownMenus from 'components/navbar/top/NavbarTopDropDownMenus';
 import PurchaseCard from './PurchaseCard';
 import bgNavbar from 'assets/img/generic/bg-navbar.png';
+import { toast } from 'react-toastify';
 
 const NavbarVertical = () => {
+  console.log('ROUTES', routes)
+  const user = localStorage.getItem("email")
+  const navigate = useNavigate();
+
+  const renderLinks = (dashboardRoutes) =>{
+    let arrayTemp = []
+    if(user==='lpardo@uade.edu.ar'){
+      arrayTemp = dashboardRoutes[0].children[0].children.filter(route=>!route.name.includes('CEO'))
+    }
+    else if(user==='billgates@deliver.ar'){
+      arrayTemp = dashboardRoutes[0].children[0].children.filter(route=>route.name.includes('CEO'))
+    }
+    else{
+      toast.error('credenciales incorrectas')
+      navigate('/');
+    }
+    const newArray = [{
+      children:[{
+        active:routes[0].active,
+        children: arrayTemp,
+        icon: routes[0].icon,
+        name:routes[0].name
+      }],
+      label:routes[0].label,
+      labelDisable:routes[0].labelDisable
+    }]
+
+    return newArray
+  }
+
+  console.log('RENDER LINKS: ',renderLinks(routes))
+
   const {
     config: {
       navbarPosition,
@@ -88,10 +123,10 @@ const NavbarVertical = () => {
       >
         <div className="navbar-vertical-content scrollbar">
           <Nav className="flex-column" as="ul">
-            {routes.map(route => (
-              <Fragment key={route.label}>
+            {renderLinks(routes).map(route => (
+              <Fragment key={route.name}>
                 {!route.labelDisable && (
-                  <NavbarLabel label={capitalize(route.label)} />
+                  <NavbarLabel label={capitalize(route.name)} />
                 )}
                 <NavbarVerticalMenu routes={route.children} />
               </Fragment>
