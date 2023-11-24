@@ -11,7 +11,6 @@ import AuthWizardContext from 'context/Context';
 import { getUser } from 'actions/user';
 import { useDispatch } from 'react-redux';
 
-
 const LoginForm = ({ hasLabel, layout }) => {
   // State
   //const dispatch = useDispatch();
@@ -20,26 +19,41 @@ const LoginForm = ({ hasLabel, layout }) => {
     password: ''
   });
 
-  useEffect(()=>{
-    
-  }, [])
+  useEffect(() => {}, []);
 
   const navigate = useNavigate();
 
-  const handleSubmit = async () => {
+  const handleSubmit = async e => {
+    e.preventDefault();
+    const validate = await validateUserPass(formData.email, formData.password);
 
-    let permission
-    if (formData.email == "lpardo@uade.edu.ar"){
-      permission = "user"
+    if (validate) {
+      let permission;
+
+      if (formData.email == 'lpardo@uade.edu.ar') {
+        permission = 'user';
+      } else {
+        permission = 'admin';
+      }
+
+      localStorage.setItem('email', formData.email);
+      localStorage.setItem('role', permission);
+      navigate('/dashboard/marketplace');
+    } else {
+      toast.error('Usuario o contraseña incorrectos');
     }
-    else {
-      permission = "admin"
-    }
+  };
 
-    localStorage.setItem("email", formData.email)
-    localStorage.setItem("role", permission)
+  const validateUserPass = async (user, pass) => {
+    const url = `http://abmpersonalinternoapi.deliver.ar/api/LoginUid?uid=${user}&pass=${pass}`;
+    const res = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
 
-    navigate('/dashboard/marketplace');
+    return res.status == 200 ? true : false;
   };
 
   const handleFieldChange = e => {
