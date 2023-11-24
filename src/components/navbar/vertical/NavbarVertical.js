@@ -26,7 +26,7 @@ const NavbarVertical = () => {
 
   const renderLinks = dashboardRoutes => {
     let arrayTemp = [];
-    if (user === 'lpardo@uade.edu.ar') {
+    if (user === 'manny@manny.com.ar') {
       arrayTemp = dashboardRoutes[0].children[0].children.filter(
         route => !route.name.includes('CEO')
       );

@@ -18,7 +18,7 @@ const CardCustom = ({ children }) => (
       display: 'flex', // Usa flexbox para centrar verticalmente
       flexDirection: 'column', // Alinea los elementos en una columna
       justifyContent: 'center', // Centra verticalmente los elementos
-      backgroundColor:''
+      backgroundColor:'#101418'
     }}
   >
     {children}

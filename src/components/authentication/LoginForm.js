@@ -19,8 +19,6 @@ const LoginForm = ({ hasLabel, layout }) => {
     password: ''
   });
 
-  useEffect(() => {}, []);
-
   const navigate = useNavigate();
 
   const handleSubmit = async e => {
@@ -30,7 +28,7 @@ const LoginForm = ({ hasLabel, layout }) => {
     if (validate) {
       let permission;
 
-      if (formData.email == 'lpardo@uade.edu.ar') {
+      if (formData.email == 'manny@manny.com.ar') {
         permission = 'user';
       } else {
         permission = 'admin';
