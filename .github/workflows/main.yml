@@ -1,20 +1,38 @@
-name: Deploy to AWS
+name: Upload Frontend - Branch main
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-  run_example_job:
+  build:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+
     steps:
-    - name: Deploy AWS FRONT
-      uses: appleboy/ssh-action@v0.1.10
-      with:
-        host: ${{ secrets.AWS_HOST }}
-        username: ${{ secrets.AWS_USER }}
-        key: ${{ secrets.AWS_KEY }}
-        port: ${{ secrets.AWS_PORT }}
-        script: whoami
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js 17.0.0
+        uses: actions/setup-node@v2
+        with:
+          node-version: '17.0.0'
+
+      - name: Install dependencies
+        run: npm install -f
+        
+      - name: Build app
+        run: npm run build
+        env:
+          CI: ""
+
+      - name: Upload to S3
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --acl public-read
+        env:
+          SOURCE_DIR: build/
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}

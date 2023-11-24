@@ -10,7 +10,9 @@
     display: block;
     .nav-item-circle {
       color: var(--#{$variable-prefix}500);
-      background-color: var(--#{$variable-prefix}theme-wizard-nav-item-circle-bg);
+      background-color: var(
+        --#{$variable-prefix}theme-wizard-nav-item-circle-bg
+      );
       border: 2px solid var(--#{$variable-prefix}300);
       height: 2.5rem;
       width: 2.5rem;

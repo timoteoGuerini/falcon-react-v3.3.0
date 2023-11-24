@@ -148,7 +148,7 @@ const GrossRevenue = ({ data }) => {
           />
         </div>
       </Card.Body>
-      <Card.Footer as={Flex} className="border-top py-2 flex-between-center">
+      {/* <Card.Footer as={Flex} className="border-top py-2 flex-between-center">
         <Flex>
           <Button
             variant="text"
@@ -173,7 +173,7 @@ const GrossRevenue = ({ data }) => {
           </Button>
         </Flex>
         <FalconLink title="View report" className="px-0" />
-      </Card.Footer>
+      </Card.Footer> */}
     </Card>
   );
 };

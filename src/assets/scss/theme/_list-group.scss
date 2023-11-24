@@ -8,26 +8,34 @@
 @mixin list-group-item-variant($state, $background, $color) {
   .list-group-item-#{$state} {
     color: var(--#{$variable-prefix}list-group-item-#{$state}-color);
-    background-color: var(--#{$variable-prefix}list-group-item-#{$state}-background);
+    background-color: var(
+      --#{$variable-prefix}list-group-item-#{$state}-background
+    );
 
     // TODO: Extract this variable.
-    --#{$variable-prefix}list-group-item-#{$state}-hover-focus-background: #{shade-color($background, 10%)};
+    --#{$variable-prefix}list-group-item-#{$state}-hover-focus-background: #{shade-color(
+        $background,
+        10%
+      )};
     &.list-group-item-action {
       &:hover,
       &:focus {
         color: var(--#{$variable-prefix}list-group-item-#{$state}-color);
-        background-color: var(--#{$variable-prefix}list-group-item-#{$state}-hover-focus-background);
+        background-color: var(
+          --#{$variable-prefix}list-group-item-#{$state}-hover-focus-background
+        );
       }
 
       &.active {
         color: $white;
-        background-color: var(--#{$variable-prefix}list-group-item-#{$state}-color);
+        background-color: var(
+          --#{$variable-prefix}list-group-item-#{$state}-color
+        );
         border-color: var(--#{$variable-prefix}list-group-item-#{$state}-color);
       }
     }
   }
 }
-
 
 // Base class
 //
@@ -42,7 +50,6 @@
   margin-bottom: 0;
   @include border-radius($list-group-border-radius);
 }
-
 
 // Interactive list items
 //
@@ -68,7 +75,6 @@
     background-color: $list-group-action-active-bg;
   }
 }
-
 
 // Individual list items
 //
@@ -111,11 +117,10 @@
 
     &.active {
       margin-top: -$list-group-border-width;
-      border-top-width: $list-group-border-width; 
+      border-top-width: $list-group-border-width;
     }
   }
 }
-
 
 // Horizontal
 //
@@ -157,7 +162,6 @@
   }
 }
 
-
 // Flush list items
 //
 // Remove borders and border-radius to keep list group items edge-to-edge. Most
@@ -174,7 +178,6 @@
     }
   }
 }
-
 
 // scss-docs-start list-group-modifiers
 // List group contextual variants

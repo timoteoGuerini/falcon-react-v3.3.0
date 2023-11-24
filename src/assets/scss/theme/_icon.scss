@@ -27,18 +27,16 @@
     height: 1.875rem;
     width: 1.875rem;
   }
-  
+
   &.icon-item-lg {
     height: 2.75rem;
     width: 2.75rem;
   }
 }
 
-
-.fa-icon-wait{
+.fa-icon-wait {
   opacity: 0;
-  .fontawesome-i2svg-active &{
+  .fontawesome-i2svg-active & {
     opacity: 1;
   }
 }
-

@@ -23,12 +23,18 @@
     min-height: 100%;
   }
   @include hover-focus {
-    .hover-box-content-initial { opacity: 0; }
-    .hoverbox-content { opacity: 1; }
-    .as-hoverbox-content { z-index: 1; }
+    .hover-box-content-initial {
+      opacity: 0;
+    }
+    .hoverbox-content {
+      opacity: 1;
+    }
+    .as-hoverbox-content {
+      z-index: 1;
+    }
   }
 }
 
-.hoverbox-content-gradient { background: linear-gradient(transparent, var(--#{$variable-prefix}black)); }
-
-
+.hoverbox-content-gradient {
+  background: linear-gradient(transparent, var(--#{$variable-prefix}black));
+}

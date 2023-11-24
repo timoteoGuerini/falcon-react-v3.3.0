@@ -30,6 +30,7 @@ import activity6 from 'assets/img/management/activity-6.png';
 import activity7 from 'assets/img/management/activity-7.png';
 import activity8 from 'assets/img/management/activity-8.png';
 import activity9 from 'assets/img/management/activity-9.png';
+import { v4 as uuid } from 'uuid';
 
 export const greetingItems = [
   {
@@ -158,7 +159,7 @@ export const progressBar = [
 ];
 
 // ----------- Calendar Management events ------------------------
-import { v4 as uuid } from 'uuid';
+
 const date = new Date();
 const thisDay = dayjs(date).format('DD');
 const plus2Day = dayjs(date).add(2, 'day').format('DD');
