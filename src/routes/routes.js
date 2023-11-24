@@ -5,6 +5,7 @@ export const dashboardRoutes = {
     {
       name: 'Dashboard',
       active: true,
+      to:'/dashboard/marketplace',
       icon: 'chart-pie',
       children: [
         {

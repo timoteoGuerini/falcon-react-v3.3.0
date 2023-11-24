@@ -5,6 +5,9 @@ import LoginForm from 'components/authentication/LoginForm';
 import Card from 'components/doc-components/Cards';
 import Logo from 'components/common/Logo';
 import { AuthWizardContext } from 'context/Context';
+import logo from 'assets/img/illustrations/analytics-logo.png';
+import { Image } from 'react-bootstrap';
+
 
 const CardCustom = ({ children }) => (
   <div
@@ -36,8 +39,11 @@ const Login = () => {
         <Flex justifyContent="center" alignItems="center">
           <Logo width={70} textClass="fs-4" />
         </Flex>
+        <Flex justifyContent="center" alignItems="center">
+          <Image src={logo}/>
+        </Flex>
         <Flex justifyContent="between" alignItems="center" className="mb-3">
-          <h5>Log in</h5>
+          <h5 style={{color:'white'}}>Log in</h5>
           <p className="fs--1 text-600 mb-0"></p>
         </Flex>
         <LoginForm />

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import logo from 'assets/img/illustrations/UADE-logo.png';
 
 const Logo = ({ at, width, className, textClass, ...rest }) => {
   return (

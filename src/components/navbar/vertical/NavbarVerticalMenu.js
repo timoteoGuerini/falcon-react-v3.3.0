@@ -78,8 +78,9 @@ const NavbarVerticalMenu = ({ routes }) => {
             className={({ isActive }) =>
               isActive ? 'active nav-link' : 'nav-link'
             }
+            style={{color:'white'}}
           >
-            <NavbarVerticalMenuItem route={route} />
+            <NavbarVerticalMenuItem route={route}/>
           </NavLink>
         </Nav.Item>
       );

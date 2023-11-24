@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Nav, Navbar, Row, Col } from 'react-bootstrap';
+import { Nav, Navbar, Row, Col, Image } from 'react-bootstrap';
 import { navbarBreakPoint, topNavbarBreakpoint } from 'config';
 import { useNavigate } from 'react-router-dom';
+import logo from 'assets/img/illustrations/analytics-logo.png';
 
 import AppContext from 'context/Context';
 import Flex from 'components/common/Flex';
@@ -113,7 +114,7 @@ const NavbarVertical = () => {
       className={classNames('navbar-vertical', {
         [`navbar-${navbarStyle}`]: navbarStyle !== 'transparent'
       })}
-      variant="light"
+      variant="dark"
     >
       <Flex alignItems="center">
         <Logo at="navbar-vertical" width={90} />
@@ -129,7 +130,10 @@ const NavbarVertical = () => {
               : 'none'
         }}
       >
-        <div className="navbar-vertical-content scrollbar">
+        <div
+          className="navbar-vertical-content scrollbar"
+          style={{ backgroundColor: '#101418' }}
+        >
           <Nav className="flex-column" as="ul">
             {renderLinks(routes).map(route => (
               <Fragment key={route.name}>
@@ -140,11 +144,7 @@ const NavbarVertical = () => {
               </Fragment>
             ))}
             <Nav.Item as="li">
-              <NavLink
-                to={'/'}
-              >
-                Log out
-              </NavLink>
+              <NavLink to={'/'}>Log out</NavLink>
             </Nav.Item>
           </Nav>
 
@@ -161,6 +161,7 @@ const NavbarVertical = () => {
             )}
             <PurchaseCard />
           </>
+          <Image src={logo} />
         </div>
       </Navbar.Collapse>
     </Navbar>
