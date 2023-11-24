@@ -84,8 +84,8 @@ import AnimatedIcons from 'components/doc-components/AnimatedIcons';
 import DatePicker from 'components/doc-components/DatePicker';
 import FontAwesome from 'components/doc-components/FontAwesome';
 import Changelog from 'components/documentation/change-log/ChangeLog';
-import Analytics from 'components/dashboards/analytics';
-import Crm from 'components/dashboards/crm';
+import AdmPersonal from 'components/dashboards/analytics';
+import CoreContable from 'components/dashboards/crm';
 import Saas from 'components/dashboards/saas';
 import Profile from 'components/pages/user/profile/Profile';
 import Associations from 'components/pages/asscociations/Associations';
@@ -180,11 +180,15 @@ import SplitConfirmMail from 'components/authentication/split/ConfirmMail';
 import SplitLockScreen from 'components/authentication/split/LockScreen';
 
 import Wizard from 'components/wizard/Wizard';
-import Dashboard from 'components/dashboards/default';
+import Marketplace from 'components/dashboards/default';
 import AppContext from 'context/Context';
 import VisualAnalysis from 'components/dashboards/visualAnalysis';
 import Metrics from 'components/dashboards/metrics';
 import Login from 'components/authentication/simple/Login';
+import CoreBancario from 'components/dashboards/CoreBancario';
+import Usuarios from 'components/dashboards/Usuarios';
+import Robots from 'components/dashboards/Robots';
+import Payments from 'components/dashboards/Payments';
 
 const Layout = () => {
   const HTMLClassList = document.getElementsByTagName('html')[0].classList;
@@ -301,13 +305,14 @@ const Layout = () => {
         <Route path="/" element={<Login />} />
         <Route element={<MainLayout />}>
           {/*Dashboard*/}
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="dashboard/deliveries" element={<Analytics />} />
-          <Route path="dashboard/deepracer" element={<Crm />} />
-          <Route path="dashboard/metrics" element={<Metrics />} />
-          <Route path="dashboard/visualAnalysis" element={<VisualAnalysis />} />
+          <Route path="/dashboard/marketplace" element={<Marketplace />} />
+          <Route path="dashboard/admin-personal" element={<AdmPersonal />} />
+          <Route path="dashboard/core-contable" element={<CoreContable />} />
+          <Route path="dashboard/core-bancario" element={<CoreBancario />} />
+          <Route path="dashboard/usuarios" element={<Usuarios />} />
+          <Route path="dashboard/robots" element={<Robots />} />
+          <Route path="dashboard/payments" element={<Payments />} />
           {/* <Route path="dashboard/saas" element={<Saas />} /> */}
-          <Route path="dashboard/users-robots" element={<Ecommerce />} />
           <Route
             path="dashboard/project-management"
             element={<ProjectManagement />}

@@ -1,11 +1,9 @@
 import axios from 'axios';
-import * as types from './types';
+import * as types from './types'; 
 // import errorHandler from 'utils/errorHandler';
 
-export const getUser = formData => async dispatch => {
-    try {
-      dispatch({ type: types.USER_REQUEST });
-  
+export const processUser = formData => async dispatch => {
+    try {  
       const { data } = await axios.get(
         `http://abmpersonalinternoapi.deliver.ar/api/LoginUid?uid=${formData.email}&pass=${formData.password}`,
         {
@@ -14,17 +12,21 @@ export const getUser = formData => async dispatch => {
           }
         }
       );
-  
-      dispatch({
-        type: types.USER_GET,
-        payload: data
-      });
+
+      console.log(data)
+
+      let permission
+      if (formData.email == "lpardo@uade.edu.ar"){
+        permission = "user"
+      }
+      else {
+        permission = "admin"
+      }
+
+      localStorage.setItem("email", formData.email)
+      localStorage.setItem("role", permission)
     } catch (error) {
-      dispatch({
-        type: types.USER_FAIL
-        //payload: error
-      });
-  
+      console.log(Error)
       // errorHandler(error, dispatch);
     }
   };

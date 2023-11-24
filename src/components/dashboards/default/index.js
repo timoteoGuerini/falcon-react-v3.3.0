@@ -30,7 +30,7 @@ import RunningProjects from './RunningProjects';
 import FalconCardHeader from 'components/common/FalconCardHeader';
 import Powerbi from '../analytics/powerbi/Powerbi';
 
-const Dashboard = () => {
+const Marketplace = () => {
   const [frame, setFrame] = useState('');
 
   useEffect(() => {
@@ -44,7 +44,7 @@ const Dashboard = () => {
           <Card className="custom-card mt-4">
             <FalconCardHeader title="Purchases" light titleTag="h6" />
             <Card.Body className="py-0">
-              <Powerbi url="https://app.powerbi.com/reportEmbed?reportId=85f3168c-585c-4dff-8e21-30940c397e07&autoAuth=true&ctid=344979d0-d31d-4c57-8ba0-491aff4acaed" />
+              <Powerbi url="https://app.powerbi.com/reportEmbed?reportId=620d3793-7b97-4d5d-936c-aebc41cc2ce9&autoAuth=true&ctid=344979d0-d31d-4c57-8ba0-491aff4acaed" />
             </Card.Body>
           </Card>
         </Col>
@@ -53,4 +53,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Marketplace;

@@ -14,7 +14,7 @@ import { useDispatch } from 'react-redux';
 
 const LoginForm = ({ hasLabel, layout }) => {
   // State
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -26,51 +26,22 @@ const LoginForm = ({ hasLabel, layout }) => {
 
   const navigate = useNavigate();
 
-  // Handler
-  /*const handleSubmit = e => {
-    e.preventDefault();
-
-
-
-      if (auth.data[0].email === formData.email && auth.data[0].password === formData.password) {
-          toast.success(`Logged in as ${formData.email}`, {
-              theme: 'colored'
-          });
-          navigate('/');
-      }
-      else {
-          toast.error(`Wrong credentials`, {
-              theme: 'red'
-          });
-      }
-    };*/
-
   const handleSubmit = async () => {
-    dispatch(getUser(formData));
-    navigate('/dashboard');
-    // try {
-    //   console.log('USUARIO: ',user)
-    //   const response = await axios.get(
-    //     `http://abmpersonalinternoapi.deliver.ar/api/LoginUid?uid=${formData.email}&pass=${formData.password}`
-    //   );
-    //   console.log(response.data);
-    //   if (response.status == 'ok') {
-    //     toast.success(`Logged in as ${formData.email}`, {
-    //       theme: 'colored'
-    //     });
-    //     setUser(formData.email);
-    //     //user = formData.email;
-    //     console.log('USUARIO LOGUEADO: ', user);
-    //     navigate('/dashboard');
-    //   } else {
-    //     toast.error(`Wrong credentials`, {
-    //       theme: 'red'
-    //     });
-    //   }
-    // } catch (error) {
-    //   // Manejar errores
-    //   console.error('Error al iniciar sesi�n:', error);
-    // }
+
+    console.log
+
+    let permission
+    if (formData.email == "lpardo@uade.edu.ar"){
+      permission = "user"
+    }
+    else {
+      permission = "admin"
+    }
+
+    localStorage.setItem("email", formData.email)
+    localStorage.setItem("role", permission)
+
+    navigate('/dashboard/marketplace');
   };
 
   const handleFieldChange = e => {

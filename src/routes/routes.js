@@ -8,34 +8,39 @@ export const dashboardRoutes = {
       icon: 'chart-pie',
       children: [
         {
-          name: 'Purchases',
-          to: '/dashboard',
+          name: 'CEO - Marketplace',
+          to: '/dashboard/marketplace',
           exact: true,
           active: true
         },
         {
-          name: 'Deliveries',
-          to: '/dashboard/deliveries',
+          name: 'CEO - Admin Personal',
+          to: '/dashboard/admin-personal',
           active: true
         },
         {
-          name: 'Deepracer',
-          to: '/dashboard/deepracer',
+          name: 'CEO - Core Contable',
+          to: '/dashboard/core-contable',
           active: true
         },
         {
-          name: 'Visual Analysis',
-          to: '/dashboard/visualAnalysis',
+          name: 'CEO - Core Bancario',
+          to: '/dashboard/core-bancario',
           active: true
         },
         {
-          name: 'Metrics',
-          to: '/dashboard/metrics',
+          name: 'CEO - Usuarios',
+          to: '/dashboard/usuarios',
           active: true
         },
         {
-          name: 'Users & Robots',
-          to: '/dashboard/users-robots',
+          name: 'Robots',
+          to: '/dashboard/robots',
+          active: true
+        },
+        {
+          name: 'Payments',
+          to: '/dashboard/payments',
           active: true
         }
         // {
