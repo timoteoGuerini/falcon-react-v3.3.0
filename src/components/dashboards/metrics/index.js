@@ -7,7 +7,7 @@ const Metrics = () => {
     <>
       <Row className="g-3 mb-3 mt-3">
         <Col lg={12}>
-          <Card className="custom-card mt-4">
+          <Card className="custom-card">
             <FalconCardHeader title="Metrics" light titleTag="h6" />
             <Card.Body className="py-0">
               <iframe

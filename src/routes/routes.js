@@ -14,6 +14,12 @@ export const dashboardRoutes = {
           active: true
         },
         {
+          name: 'CEO - Empresas',
+          to: '/dashboard/empresas',
+          exact: true,
+          active: true
+        },
+        {
           name: 'CEO - Admin Personal',
           to: '/dashboard/admin-personal',
           active: true
@@ -1182,7 +1188,7 @@ export const documentationRoutes = {
 };
 
 export default [
-  dashboardRoutes,
+  dashboardRoutes
   // appRoutes
   // pagesRoutes,
   // modulesRoutes,

@@ -4,14 +4,13 @@ import FalconCardHeader from 'components/common/FalconCardHeader';
 import Powerbi from '../analytics/powerbi/Powerbi';
 import { AuthWizardContext } from 'context/Context';
 
-
 const Ecommerce = () => {
   const { user } = useContext(AuthWizardContext);
   return (
     <>
       <Row className="g-3 mb-3 mt-3">
         <Col lg={12}>
-          <Card className="custom-card mt-4">
+          <Card className="custom-card">
             <FalconCardHeader title="Users & Robots" light titleTag="h6" />
             <Card.Body className="py-0">
               {

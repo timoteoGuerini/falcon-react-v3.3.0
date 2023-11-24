@@ -189,6 +189,7 @@ import CoreBancario from 'components/dashboards/CoreBancario';
 import Usuarios from 'components/dashboards/Usuarios';
 import Robots from 'components/dashboards/Robots';
 import Payments from 'components/dashboards/Payments';
+import Empresa from 'components/dashboards/Empresas';
 
 const Layout = () => {
   const HTMLClassList = document.getElementsByTagName('html')[0].classList;
@@ -306,6 +307,7 @@ const Layout = () => {
         <Route element={<MainLayout />}>
           {/*Dashboard*/}
           <Route path="/dashboard/marketplace" element={<Marketplace />} />
+          <Route path="/dashboard/empresas" element={<Empresa />} />
           <Route path="dashboard/admin-personal" element={<AdmPersonal />} />
           <Route path="dashboard/core-contable" element={<CoreContable />} />
           <Route path="dashboard/core-bancario" element={<CoreBancario />} />
