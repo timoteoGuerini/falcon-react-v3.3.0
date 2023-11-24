@@ -16,39 +16,47 @@ import NavbarTopDropDownMenus from 'components/navbar/top/NavbarTopDropDownMenus
 import PurchaseCard from './PurchaseCard';
 import bgNavbar from 'assets/img/generic/bg-navbar.png';
 import { toast } from 'react-toastify';
+import NavbarNavLink from '../top/NavbarNavLink';
+import { NavLink } from 'react-router-dom';
 
 const NavbarVertical = () => {
-  console.log('ROUTES', routes)
-  const user = localStorage.getItem("email")
+  console.log('ROUTES', routes);
+  const user = localStorage.getItem('email');
   const navigate = useNavigate();
 
-  const renderLinks = (dashboardRoutes) =>{
-    let arrayTemp = []
-    if(user==='lpardo@uade.edu.ar'){
-      arrayTemp = dashboardRoutes[0].children[0].children.filter(route=>!route.name.includes('CEO'))
-    }
-    else if(user==='billgates@deliver.ar'){
-      arrayTemp = dashboardRoutes[0].children[0].children.filter(route=>route.name.includes('CEO'))
-    }
-    else{
-      toast.error('credenciales incorrectas')
+  const renderLinks = dashboardRoutes => {
+    let arrayTemp = [];
+    if (user === 'lpardo@uade.edu.ar') {
+      arrayTemp = dashboardRoutes[0].children[0].children.filter(
+        route => !route.name.includes('CEO')
+      );
+    } else if (user === 'billgates@deliver.ar') {
+      arrayTemp = dashboardRoutes[0].children[0].children.filter(route =>
+        route.name.includes('CEO')
+      );
+    } else {
+      toast.error('credenciales incorrectas');
       navigate('/');
     }
-    const newArray = [{
-      children:[{
-        active:routes[0].active,
-        children: arrayTemp,
-        icon: routes[0].icon,
-        name:routes[0].name
-      }],
-      label:routes[0].label,
-      labelDisable:routes[0].labelDisable
-    }]
+    const newArray = [
+      {
+        children: [
+          {
+            active: routes[0].active,
+            children: arrayTemp,
+            icon: routes[0].icon,
+            name: routes[0].name
+          }
+        ],
+        label: routes[0].label,
+        labelDisable: routes[0].labelDisable
+      }
+    ];
 
-    return newArray
-  }
+    return newArray;
+  };
 
-  console.log('RENDER LINKS: ',renderLinks(routes))
+  console.log('RENDER LINKS: ', renderLinks(routes));
 
   const {
     config: {
@@ -131,6 +139,13 @@ const NavbarVertical = () => {
                 <NavbarVerticalMenu routes={route.children} />
               </Fragment>
             ))}
+            <Nav.Item as="li">
+              <NavLink
+                to={'/'}
+              >
+                Log out
+              </NavLink>
+            </Nav.Item>
           </Nav>
 
           <>

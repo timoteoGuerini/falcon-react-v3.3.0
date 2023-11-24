@@ -17,7 +17,8 @@ const CardCustom = ({ children }) => (
       borderRadius: '8px', // Agrega bordes redondeados// Asegura que la tarjeta ocupe al menos toda la altura de la pantalla
       display: 'flex', // Usa flexbox para centrar verticalmente
       flexDirection: 'column', // Alinea los elementos en una columna
-      justifyContent: 'center' // Centra verticalmente los elementos
+      justifyContent: 'center', // Centra verticalmente los elementos
+      backgroundColor:''
     }}
   >
     {children}
@@ -25,12 +26,10 @@ const CardCustom = ({ children }) => (
 );
 
 const Login = () => {
-  const { user } = useContext(AuthWizardContext);
   // setUser({
   //   ...user,
   //   email:'hola', 
   //   password:'mundo'})
-  console.log('USUARIO AFTER LOG IN:', user);
   return (
     <CardCustom>
       <>

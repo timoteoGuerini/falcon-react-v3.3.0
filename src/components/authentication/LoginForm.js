@@ -38,7 +38,10 @@ const LoginForm = ({ hasLabel, layout }) => {
 
       localStorage.setItem('email', formData.email);
       localStorage.setItem('role', permission);
-      navigate('/dashboard/marketplace');
+      permission==='user' ? 
+      navigate('dashboard/robots')
+      :
+      navigate('dashboard/marketplace')
     } else {
       toast.error('Usuario o contraseña incorrectos');
     }
