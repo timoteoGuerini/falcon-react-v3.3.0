@@ -28,8 +28,6 @@ const LoginForm = ({ hasLabel, layout }) => {
 
   const handleSubmit = async () => {
 
-    console.log
-
     let permission
     if (formData.email == "lpardo@uade.edu.ar"){
       permission = "user"
